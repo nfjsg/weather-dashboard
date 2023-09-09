@@ -70,11 +70,54 @@ function handleWeatherData(data) {
 }
 
 // Function to display current weather data
+// Function to display current weather data
 function displayCurrentWeather(cityName, date, temperature, humidity, windSpeed, weatherIcon) {
-    // Update the current weather section with data
-    // Use the DOM elements like currentWeather to display the information
-    // You can format and structure the data in the way you want it to be displayed
+    // Create HTML elements to display the current weather data
+    const weatherInfo = document.createElement('div');
+    weatherInfo.classList.add('weather-info'); // You can define a CSS class for styling
+
+    // City name and date
+    const cityDate = document.createElement('h2');
+    cityDate.textContent = `${cityName} - ${formatDate(date)}`; // You can define a formatDate function
+    weatherInfo.appendChild(cityDate);
+
+    // Weather icon
+    const iconImage = document.createElement('img');
+    iconImage.src = `https://openweathermap.org/img/wn/${weatherIcon}.png`; // Replace with your weather icon URL
+    iconImage.alt = 'Weather Icon';
+    weatherInfo.appendChild(iconImage);
+
+    // Temperature
+    const tempElement = document.createElement('p');
+    tempElement.textContent = `Temperature: ${convertKelvinToCelsius(temperature)}°C`; // You can define a conversion function
+    weatherInfo.appendChild(tempElement);
+
+    // Humidity
+    const humidityElement = document.createElement('p');
+    humidityElement.textContent = `Humidity: ${humidity}%`;
+    weatherInfo.appendChild(humidityElement);
+
+    // Wind speed
+    const windElement = document.createElement('p');
+    windElement.textContent = `Wind Speed: ${windSpeed} m/s`;
+    weatherInfo.appendChild(windElement);
+
+    // Update the current weather section with the weatherInfo div
+    currentWeather.innerHTML = ''; // Clear previous data
+    currentWeather.appendChild(weatherInfo);
 }
+
+// Function to format a date (you can customize this)
+function formatDate(dateString) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+}
+
+// Function to convert temperature from Kelvin to Celsius (you can customize this)
+function convertKelvinToCelsius(kelvin) {
+    return (kelvin - 273.15).toFixed(1);
+}
+
 
 // Function to display 5-day forecast data
 function displayForecast(forecastData) {
