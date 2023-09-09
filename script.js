@@ -120,11 +120,48 @@ function convertKelvinToCelsius(kelvin) {
 
 
 // Function to display 5-day forecast data
+// Function to display 5-day forecast data
 function displayForecast(forecastData) {
-    // Update the forecast section with data
-    // Use the DOM elements like forecast to display the 5-day forecast
-    // Iterate through forecastData and format the data as needed
+    // Clear previous forecast data
+    forecast.innerHTML = '';
+
+    // Iterate through forecastData (an array of forecast items)
+    forecastData.forEach((item) => {
+        // Create a container for each forecast item
+        const forecastItem = document.createElement('div');
+        forecastItem.classList.add('forecast-item'); // You can define a CSS class for styling
+
+        // Date
+        const dateElement = document.createElement('p');
+        dateElement.textContent = formatDate(item.dt_txt); // You can define a formatDate function
+        forecastItem.appendChild(dateElement);
+
+        // Weather icon
+        const iconImage = document.createElement('img');
+        iconImage.src = `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`; // Replace with your weather icon URL
+        iconImage.alt = 'Weather Icon';
+        forecastItem.appendChild(iconImage);
+
+        // Temperature
+        const tempElement = document.createElement('p');
+        tempElement.textContent = `Temperature: ${convertKelvinToCelsius(item.main.temp)}°C`; // You can define a conversion function
+        forecastItem.appendChild(tempElement);
+
+        // Humidity
+        const humidityElement = document.createElement('p');
+        humidityElement.textContent = `Humidity: ${item.main.humidity}%`;
+        forecastItem.appendChild(humidityElement);
+
+        // Wind speed
+        const windElement = document.createElement('p');
+        windElement.textContent = `Wind Speed: ${item.wind.speed} m/s`;
+        forecastItem.appendChild(windElement);
+
+        // Append the forecastItem to the forecast section
+        forecast.appendChild(forecastItem);
+    });
 }
+
 
 
 // Function to add a city to the search history
