@@ -22,23 +22,67 @@ cityForm.addEventListener('submit', function (e) {
     cityInput.value = '';
 });
 
-// Function to fetch weather data from the API
+// Make an API request using fetch() or other methods
 function fetchWeatherData(cityName) {
     // Construct the API URL
     const apiUrl = `${API_BASE_URL}forecast?q=${cityName}&appid=${API_KEY}`;
-    
-    // Make an API request using fetch() or other methods
-    // Handle the response and update the DOM with weather data
+
+    // Make the API request using fetch()
+    fetch(apiUrl)
+        .then((response) => {
+            // Check if the response status is OK (200)
+            if (response.ok) {
+                // Parse the JSON response
+                return response.json();
+            } else {
+                // Handle the case where the response is not OK (e.g., city not found)
+                throw new Error('City not found');
+            }
+        })
+        .then((data) => {
+            // Handle the JSON data and update the DOM with weather data
+            handleWeatherData(data);
+        })
+        .catch((error) => {
+            // Handle errors (e.g., network error, city not found)
+            console.error(error);
+            // Display an error message to the user, e.g., in the current weather section
+            currentWeather.innerHTML = `<p>Error: ${error.message}</p>`;
+        });
 }
 
-// Functions to display current weather and 5-day forecast
-function displayCurrentWeather(weatherData) {
+// Function to handle weather data after a successful API request
+function handleWeatherData(data) {
+    // Extract the relevant information from the API response data
+    const cityName = data.city.name;
+    const date = data.list[0].dt_txt; // You may need to format this date
+    const temperature = data.list[0].main.temp; // Temperature in Kelvin, you may need to convert it
+    const humidity = data.list[0].main.humidity;
+    const windSpeed = data.list[0].wind.speed;
+    const weatherIcon = data.list[0].weather[0].icon;
+
+    // Update the DOM with the weather data
+    displayCurrentWeather(cityName, date, temperature, humidity, windSpeed, weatherIcon);
+
+    // Extract and display the 5-day forecast data if needed
+    const forecastData = data.list.slice(1, 6); // Get the next 5 days of data
+    displayForecast(forecastData);
+}
+
+// Function to display current weather data
+function displayCurrentWeather(cityName, date, temperature, humidity, windSpeed, weatherIcon) {
     // Update the current weather section with data
+    // Use the DOM elements like currentWeather to display the information
+    // You can format and structure the data in the way you want it to be displayed
 }
 
+// Function to display 5-day forecast data
 function displayForecast(forecastData) {
     // Update the forecast section with data
+    // Use the DOM elements like forecast to display the 5-day forecast
+    // Iterate through forecastData and format the data as needed
 }
+
 
 // Function to add a city to the search history
 function addToSearchHistory(cityName) {
