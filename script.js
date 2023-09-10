@@ -122,7 +122,7 @@ function convertKelvinToCelsius(kelvin) {
 function displayForecast(forecastData) {
     // Clear previous forecast data
     forecast.innerHTML = '';
-    forecast.style.paddingBottom="55px";
+    forecast.style.paddingBottom="100px";
 
     // Iterate through forecastData (an array of forecast items)
     forecastData.forEach((item) => {
