@@ -131,6 +131,7 @@ function displayForecast(forecastData) {
 
         // Date
         const dateElement = document.createElement('p');
+        dateElement.style.marginTop="50px";
         dateElement.textContent = formatDate(item.dt_txt); // You can define a formatDate function
         forecastItem.appendChild(dateElement);
 
