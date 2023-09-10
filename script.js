@@ -2,7 +2,7 @@
 
 // Constants for API base URL and API key
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5/';
-const API_KEY = 'ed0332620cbba11969d6866e084f75a4';
+const API_KEY = '012dd1c1242aa6f2cfa07a3218ba67ff';
 
 // DOM elements
 const cityForm = document.getElementById('city-form');
