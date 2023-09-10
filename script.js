@@ -123,7 +123,7 @@ function displayForecast(forecastData) {
     // Clear previous forecast data
     forecast.innerHTML = '';
     forecast.style.paddingBottom="100px";
-    forecast.style.paddingTop="100px";
+    forecast.style.paddingTop="80px";
 
     // Iterate through forecastData (an array of forecast items)
     forecastData.forEach((item) => {
