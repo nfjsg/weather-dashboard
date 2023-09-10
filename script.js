@@ -3,6 +3,7 @@
 // Constants for API base URL and API key
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = '012dd1c1242aa6f2cfa07a3218ba67ff';
+const forecastDays = 5;
 
 // DOM elements
 const cityForm = document.getElementById('city-form');
@@ -25,7 +26,7 @@ cityForm.addEventListener('submit', function (e) {
 // Make an API request using fetch() or other methods
 function fetchWeatherData(cityName) {
     // Construct the API URL
-   const apiUrl = `${API_BASE_URL}forecast?q=${cityName}&appid=${API_KEY}&cnt=5`;
+   const apiUrl = `${API_BASE_URL}forecast?q=${cityName}&appid=${API_KEY}&cnt=${forecastDays}`;
     //const apiUrl = `${API_BASE_URL}weather?q=${cityName}&appid=${API_KEY}`;
     // Make the API request using fetch()
     fetch(apiUrl)
