@@ -165,10 +165,9 @@ function displayForecast(forecastData) {
 
 // Function to format a date (you can customize this)
 function formatDate(dateString) {
-    // Convert the API date format to a more readable format
-    const dateObject = new Date(dateString);
+    console.log(dateString); // Log the input date string
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return dateObject.toLocaleDateString(undefined, options);
+    return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
 
