@@ -191,17 +191,5 @@ searchHistoryItems.forEach((cityName) => {
     addToSearchHistory(cityName);
 });
 
-// Function to add a city to the search history
-function addToSearchHistory(cityName) {
-    // Create an <li> element and append it to the search history list
-    const listItem = document.createElement('li');
-    listItem.textContent = cityName;
-    searchHistory.appendChild(listItem);
-
-    // Add a click event listener to the list item to fetch weather data for that city again
-    listItem.addEventListener('click', function () {
-        fetchWeatherData(cityName);
-    });
-}
 
 
