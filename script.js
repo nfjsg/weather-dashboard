@@ -3,7 +3,7 @@
 // Constants for API base URL and API key
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = '012dd1c1242aa6f2cfa07a3218ba67ff';
-const forecastDays = 3;
+const forecastDays = 10;
 
 // DOM elements
 const cityForm = document.getElementById('city-form');
