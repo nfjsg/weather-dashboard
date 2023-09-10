@@ -107,11 +107,8 @@ function displayCurrentWeather(cityName, date, temperature, humidity, windSpeed,
     currentWeather.appendChild(weatherInfo);
 }
 
-// Function to format a date (you can customize this)
-function formatDate(dateString) {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-}
+
+
 
 // Function to convert temperature from Kelvin to Celsius (you can customize this)
 function convertKelvinToCelsius(kelvin) {
