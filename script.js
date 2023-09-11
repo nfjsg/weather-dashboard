@@ -26,7 +26,7 @@ cityForm.addEventListener('submit', function (e) {
 // Make an API request using fetch() or other methods
 function fetchWeatherData(cityName) {
     // Construct the API URL
-   const apiUrl = `${API_BASE_URL}forecast?q=${cityName}&appid=${API_KEY}&cnt=${forecastDays}`;
+   const apiUrl = `${API_BASE_URL}forecast/daily?q=${cityName}&appid=${API_KEY}&cnt=${forecastDays}`;
     //const apiUrl = `${API_BASE_URL}weather?q=${cityName}&appid=${API_KEY}`;
     // Make the API request using fetch()
     fetch(apiUrl)
