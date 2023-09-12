@@ -183,16 +183,21 @@ function addToSearchHistory(cityName) {
     listItem.addEventListener('click', function () {
         fetchWeatherData(cityName);
     });
+
+    // Store the updated search history in localStorage
+    const searchHistoryItems = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    searchHistoryItems.push(cityName);
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistoryItems));
 }
 
-// Initialization code
-// Load search history from localStorage, if available
+// Initialize search history from localStorage, if available
 const searchHistoryItems = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
 // Populate the search history list with items from localStorage
 searchHistoryItems.forEach((cityName) => {
     addToSearchHistory(cityName);
 });
+
 
 
 
