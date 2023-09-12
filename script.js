@@ -188,6 +188,9 @@ function addToSearchHistory(cityName) {
     const searchHistoryItems = JSON.parse(localStorage.getItem('searchHistory')) || [];
     searchHistoryItems.push(cityName);
     localStorage.setItem('searchHistory', JSON.stringify(searchHistoryItems));
+     // Log the added city and the updated search history
+    console.log('Added to search history:', cityName);
+    console.log('Updated search history:', searchHistoryItems);
 }
 
 // Initialize search history from localStorage, if available
