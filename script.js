@@ -71,12 +71,14 @@ function handleWeatherData(data) {
 
 
     const uniqueForecastDays = [];
-        const forecastData = data.list.filter(forecast => {
-            const forecastDate = new Date(forecast.dt_txt).getDate();
-            if (!uniqueForecastDays.includes(forecastDate)) {
-                return uniqueForecastDays.push(forecastDate);
-            }
-        });
+const forecastData = data.list.slice(1, 6).filter(forecast => {
+    const forecastDate = new Date(forecast.dt_txt).getDate();
+    if (!uniqueForecastDays.includes(forecastDate)) {
+        uniqueForecastDays.push(forecastDate);
+        return true;
+    }
+    return false;
+});
     displayForecast(forecastData);
 }
 
