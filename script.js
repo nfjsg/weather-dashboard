@@ -70,11 +70,11 @@ function handleWeatherData(data) {
   //  displayForecast(forecastData);
 
 
-    const forecastData = [];
-        const fiveDaysForecast = data.list.filter(forecast => {
+    const uniqueForecastDays = [];
+        const forecastData = data.list.filter(forecast => {
             const forecastDate = new Date(forecast.dt_txt).getDate();
-            if (!forecastData.includes(forecastDate)) {
-                return forecastData.push(forecastDate);
+            if (!uniqueForecastDays.includes(forecastDate)) {
+                return uniqueForecastDays.push(forecastDate);
             }
         });
     displayForecast(forecastData);
