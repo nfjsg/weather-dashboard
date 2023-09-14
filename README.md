@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-![Weather Dashboard Screenshot](screenshot.png)
+![Weather Dashboard Screenshot](IMG_7306.jpeg)
 
 A weather dashboard that allows you to view current and future weather conditions for multiple cities. Plan your trips accordingly with up-to-date weather information.
 
