@@ -66,10 +66,10 @@ function handleWeatherData(data) {
     displayCurrentWeather(cityName, date, temperature, humidity, windSpeed, weatherIcon);
 
     // Extract and display the 5-day forecast data if needed
-    const forecastData = data.list.slice(1, 6); // Get the next 5 days of data
+    //const forecastData = data.list.slice(1, 6); // Get the next 5 days of data
   //  displayForecast(forecastData);
 
-
+const forecastData = data.list.filter(item => item % 8 === 0 && item >= 0 && item <= data.list.length);
     
     displayForecast(forecastData);
 }
