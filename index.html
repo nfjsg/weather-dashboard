@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Replace "styles.css" with the actual path to your CSS file -->
 </head>
+
 <body>
     <header>
         <h1>Weather Dashboard</h1>
-        <!-- City search form -->
-        <form id="city-form">
-            <input type="text" id="city-input" placeholder="Enter a city">
-            <button type="submit">Search</button>
-        </form>
+       <!-- Create a search form here with an input field and a submit button -->
+<form id="search-form">
+    <label for="city-input">Enter a city name:</label>
+    <input type="text" id="city-input" placeholder="E.g., New York" required>
+    <button type="submit">Search</button>
+</form>
+
     </header>
 
     <main>
-        <!-- Current weather display -->
-        <div id="current-weather">
-            <!-- Display current weather data here -->
-        </div>
 
-        <!-- 5-day forecast display -->
-        <div id="forecast">
-            <!-- Display 5-day forecast data here -->
-        </div>
+        <section id="current-weather">
+            <!-- Display current weather data here -->
+        </section>
+
+        <section id="forecast">
+
+            <!-- Display 5-day weather forecast here -->
+        </section>
     </main>
 
     <aside>
-        <!-- Search history list -->
         <h2>Search History</h2>
         <ul id="search-history">
             <!-- Display search history items here -->
         </ul>
     </aside>
 
-    <script src="script.js"></script>
+    <!-- Add your JavaScript file link here -->
+        <script src="script.js"></script> <!-- Replace "script.js" with the actual path to your JavaScript file -->
+
 </body>
 </html>
