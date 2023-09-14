@@ -56,7 +56,7 @@ function fetchWeatherData(cityName) {
 function handleWeatherData(data) {
     // Extract the relevant information from the API response data
     const cityName = data.city.name;
-    const date = data.list[0].dt_txt; // You may need to format this date
+    const date = new Date(data.dt * 1000); // You may need to format this date
     const temperature = data.list[0].main.temp; // Temperature in Kelvin, you may need to convert it
     const humidity = data.list[0].main.humidity;
     const windSpeed = data.list[0].wind.speed;
@@ -66,19 +66,11 @@ function handleWeatherData(data) {
     displayCurrentWeather(cityName, date, temperature, humidity, windSpeed, weatherIcon);
 
     // Extract and display the 5-day forecast data if needed
-   // const forecastData = data.list.slice(1, 6); // Get the next 5 days of data
+    const forecastData = data.list.slice(1, 6); // Get the next 5 days of data
   //  displayForecast(forecastData);
 
 
-    const uniqueForecastDays = [];
-const forecastData = data.list.slice(1, 6).filter(forecast => {
-    const forecastDate = new Date(forecast.dt_txt).getDate();
-    if (!uniqueForecastDays.includes(forecastDate)) {
-        uniqueForecastDays.push(forecastDate);
-        return true;
-    }
-    return false;
-});
+    
     displayForecast(forecastData);
 }
 
@@ -91,7 +83,7 @@ function displayCurrentWeather(cityName, date, temperature, humidity, windSpeed,
 
     // City name and date
     const cityDate = document.createElement('h2');
-    cityDate.textContent = `${cityName} - ${formatDate(date)}`; // You can define a formatDate function
+    cityDate.textContent = `${cityName} - ${date.toLocaleDateString()}`; // You can define a formatDate function
     weatherInfo.appendChild(cityDate);
 
     // Weather icon
