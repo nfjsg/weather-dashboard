@@ -6,7 +6,8 @@ A weather dashboard that allows you to view current and future weather condition
 
 ## Live Demo
 
-Check out the live application: [Weather Dashboard](https://your-app-url-here.com)
+Check out the live application: [Weather Dashboard](https://nfjsg.github.io/weather-dashboard/)
+
 
 ## Table of Contents
 
