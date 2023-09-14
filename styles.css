@@ -1,117 +1,189 @@
-/* Reset some default styles to ensure consistency across browsers */
-body, h1, h2, h3, p, ul, li, form {
-    margin: 0;
-    padding: 0;
-}
-
+/* Add your global CSS styles here */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-}
-
-header {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
     background-color: #3498db;
     color: #fff;
     text-align: center;
     padding: 20px;
-}
-
-header h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-form {
+  }
+  
+  header h1 {
+    font-size: 24px;
+  }
+  
+  main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+ /* aside {
+    width: calc(100% - 40px);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 100px;
+  }
+*/
+  aside {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1; /* Distribute space evenly */
+    margin: 10px;
+  }
 
-#city-input {
-    padding: 10px;
+
+  
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  /* Add specific styles for current weather and forecast here */
+  
+  /* Styles for the current weather section */
+  .current-weather {
+    background-color: #bebebe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .current-weather h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .current-weather p {
     font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .current-weather img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+  }
+  
+  /* Styles for the forecast section */
+  .forecast-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .forecast-item {
+    background-color: #bebebe;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .forecast-item p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .forecast-item img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+  }
+  
+  /* Add styles for the search form and history items here */
+  
+  /* Styles for the search form */
+  #search-form {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #search-form label {
+    font-size: 18px;
+  }
+  
+  #city-input {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
+    margin-top: 5px;
+  }
+  
+  #city-input::placeholder {
+    color: #888;
+  }
+  
+  #search-form button {
+    background-color: #287ab1;
     color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-button:hover {
+    margin-top: 10px;
+  }
+  
+  #search-form button:hover {
     background-color: #2980b9;
-}
-
-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-#current-weather, #forecast {
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    flex: 1;
-}
-
-#current-weather h2, #forecast h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#current-weather img, #forecast img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-/* Add additional styling for other elements as needed */
-
-/* Search history styles */
-aside {
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    flex: 1;
-}
-
-#search-history {
-    list-style-type: none;
+  }
+  
+  /* Styles for the search history */
+  #search-history {
+    list-style: none;
     padding: 0;
-}
+    margin-top: 20px;
+  } 
 
-#search-history li {
+  /* CSS to style the search history container */
+
+  
+  
+  #search-history li {
+    font-size: 18px;
     cursor: pointer;
+    text-align: center;
     margin-bottom: 5px;
-}
+    padding: 5px;
+    background-color: #bebebe;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #search-history li:hover {
+    background-color: #e0e0e0;
+  }
 
-#search-history li:hover {
-    text-decoration: underline;
-}
 
-/* Media query for responsive design */
-@media screen and (max-width: 768px), screen and (max-height: 600px) {
-    main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #current-weather, #forecast {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
+  #forecast-heading {
+    display: block;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
